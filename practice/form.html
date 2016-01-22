@@ -1,0 +1,33 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title>Form page</title>
+</head>
+
+<body>
+<form action="form.php" method="POST">
+	<label>Name:</label> <input type="text" maxlength="25" size="10" name="name" required> <br />
+	<label>Email:</label> <input type="text" maxlength="25" size="20" name="email" required> <br />
+	<label>Major:</label> <br />
+		<input type="radio" name="major" value="CS"> Computer Science <br />
+		<input type="radio" name="major" value="WebD+D"> Web Development and Design <br />
+		<input type="radio" name="major" value="CIT"> Computer Information Technology <br />
+		<input type="radio" name="major" value="CE"> Computer Engineering <br />
+
+	<label>Places you've Visited</label> <br />
+		<input type="checkbox" name="places[]" value="NA">North America <br />
+		<input type="checkbox" name="places[]" value="SA">South America <br />
+		<input type="checkbox" name="places[]" value="EU">Europe <br />
+		<input type="checkbox" name="places[]" value="AS">Asia <br />
+		<input type="checkbox" name="places[]" value="AU">Australia <br />
+		<input type="checkbox" name="places[]" value="AF">Africa <br />
+		<input type="checkbox" name="places[]" value="AN">Antartica <br />
+	<label>Comments</label> <br />
+		<textarea rows="4" cols="50" placeholder="Place Comments Here..." name="comments">
+
+		</textarea>
+	<br />
+	<button type="submit">Submit</button>
+</form>
+</body>
+</html>
