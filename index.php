@@ -17,14 +17,7 @@ else
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-	
+	<?php include 'headerInfo.php' ?>
 	<title>Korey's Homepage</title>
 </head>
 
@@ -52,7 +45,7 @@ else
 			snow caves, and walking dogs (when I have one, hopefully we'll get our own
 			soon). I'm also a huge board game fan. Love finding a new game to play
 			with family or friends. currently my wife and I are both hooked on this 
-			one called betrayal at the house on the hill.<br /> 
+			one called betrayal at the house on the hill. <br /> 
 			Originally I came here as an English major luckily it was brother Burton 
 			who pursuaded me to come to my senses. I love programming, its always fun 
 			for me to create things, and to learn how to make whatever comes to this 
@@ -62,7 +55,7 @@ else
 			a small company that writes software for other ones. I have an old bishop 
 			that is doing that and he loves it. The thing that I love most about my 
 			new found passion of programming is that anything is possible. Creating 
-			and inventing things are so much fun!
+			and inventing things are so much fun! <br />
 			<img src="images/rambopic.jpg">
 			I've been a member of the church all of my life, I served a mission in 
 			the England Birmingham Mission. It was something else to learn about 
@@ -71,21 +64,21 @@ else
 			has been wonderful being back in the states. As I've studied the Gospel 
 			and learned more about the world and the Lord's plan for his children I'm 
 			continually reminded how awesome and powerful he is and I'm forever 
-			grateful for my testimony of the restoration of the gospel.
+			grateful for my testimony of the restoration of the gospel. <br />
+			Before college, before a mission, I was a guy who loved to party, and I
+			thought I was quite good at it too. From blowing things up, getting on
+			top of the high school roof, or any other trouble my friends and I could 
+			get into, we had quite the repetoire of troublesome things we did. 
+			However there was one thing that I was extremely proud of that I did in
+			high school. I was in track and field, and I Polevaulted. I had a great 
+			time doing it, even went and did it during the off season so I could 
+			compete on the college level too. I wasn't half bad, My best I ever did 
+			was place 4th in state my junior year. Sadly, I don't polevault anymore, 
+			perhaps if BYU Idaho had collegiate sports I would of. But, they don't. 
+			<br />
+
 		</div>
 </div> <!-- end of wrapper -->
-
-<script type="text/javascript">
-$("document").ready(function() {
-
-	$('a.read_more').click(function(event){
-
-		event.preventDefault(); /*don't create new url*/
-		$(this).parents('.item').find('.more_text').show(); /*show more text a*/
-	});
-
-}) <!-- End of jquery code -->
-</script>
 
 </body>
 </html>

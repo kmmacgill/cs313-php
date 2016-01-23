@@ -43,6 +43,7 @@ img {
 
 a {
 	color: green;
+	float: left;
 }
 
 .morecontent span {
@@ -53,6 +54,3 @@ a {
     display: block;
 }
 
-h1.homework {
-	color: green;
-}
