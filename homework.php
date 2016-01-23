@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include 'headerInfo.php' ?>
+	<?php include 'resources/headerInfo.php' ?>
 	<title>Homework Assignments</title>
 </head>
 <body>
 <div id="header">
 	<h1>Homework assignments</h1>
 </div>
-<?php include 'navigation.php';?>
+<?php include 'resources/navigation.php';?>
 <div id="wrapper"> 
 	<div id="main">
 		<h3>Please choose from one of the assignment below to view</h3>	

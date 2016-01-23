@@ -1,0 +1,56 @@
+body {
+	background-image: url("images/background.jpg");
+	text-align: left;
+
+}
+
+#wrapper {
+	width: 1300px;
+	float: center;
+}
+
+#header {
+	color: green; 
+	font-size: 25px;
+	font-family: sans-serif;
+	float: top, center;
+	text-align: center;
+}
+
+#navigation {
+	width: 300px;
+	float: left;
+	text-align: center;
+}
+
+img {
+	float: right;
+	margin: 0 0 10px 10px;
+}
+
+#main {
+	width: 1000px;
+	float: right;
+	text-align: left;
+	color: white;
+	font-size: 25px;
+}
+
+#navi {
+	color: white;
+	text-align: left;
+}
+
+a {
+	color: green;
+	float: left;
+}
+
+.morecontent span {
+    display: none;
+}
+
+.morelink {
+    display: block;
+}
+

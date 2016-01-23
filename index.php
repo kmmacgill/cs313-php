@@ -17,7 +17,7 @@ else
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include 'headerInfo.php' ?>
+	<?php include 'resources/headerInfo.php' ?>
 	<title>Korey's Homepage</title>
 </head>
 
@@ -29,7 +29,7 @@ else
 	?>
 	</div>
 <div id="wrapper">
-	<?php include 'navigation.php';?>
+	<?php include 'resources/navigation.php';?>
 	<div id="main">
 		<h3>A little about myself...</h3>
     	<div class="more"> 
