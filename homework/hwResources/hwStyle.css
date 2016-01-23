@@ -1,6 +1,7 @@
 body {
-	background-image: url("../images/background.jpg");
+	background-image: url("../hwImages/background.jpg");
 	text-align: left;
+	background-repeat: repeat;
 }
 
 #wrapper {
