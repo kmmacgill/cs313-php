@@ -1,6 +1,6 @@
 <?php
 if ($_COOKIE["submitted"] == "yes"){
-    header('Location: http://localhost/cs313/homework/results.php');
+    header('Location: http://php-kormac.rhcloud.com/homework/results.php');
     exit();
 }
 ?>
