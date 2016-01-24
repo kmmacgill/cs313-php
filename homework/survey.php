@@ -1,14 +1,6 @@
 <?php
-if (!isset($_COOKIE['firsttime']))
-{
-    setcookie("firsttime", "yes", 5);
-    header('Location: http://php-kormac.rhcloud.com/homework/survey.php');
-    exit();
-}
-else
-{
-	setcookie("firsttime", "no");
-    header('Location: http://php-kormac.rhcloud.com/homework/results.php');
+if ($_COOKIE["submitted"] == "yes"){
+    header('Location: http://localhost/cs313/homework/results.php');
     exit();
 }
 ?>
@@ -137,7 +129,7 @@ else
 			<div id="questionCenter">
 				<h3>Thanks for taking the survey!</h3>
 				<p>Don't forget to submit your results</p>
-				<input type="submit" value="submit">
+				<button type="submit" name="submit" value="submitted">Submit</button>
 				<input type="reset" value="reset">
 			</div>
 		</form>

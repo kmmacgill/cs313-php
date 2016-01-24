@@ -49,5 +49,8 @@ function validateForm() {
         Quest7 == "" || Quest7 == null){
         alert("You Must make a choice for every question.")    
         return false;
-    }   
+    }
+    else {
+        return true;
+    }     
 }

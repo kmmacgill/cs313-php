@@ -1,4 +1,9 @@
 <?php 
+	if($_POST["submit"] == "submitted") {
+		setcookie("submitted", "yes");
+	}
+
+
 	$resultFile = fopen("results.txt", "a+") or die("Unable to save results of your survey");
 	$que1 = $_POST["Q1"];
 	$que2 = $_POST["Q2"];
@@ -7,21 +12,19 @@
 	$que5 = $_POST["Q5"];
 	$que6 = $_POST["Q6"];
 	$que7 = $_POST["Q7"];
-	fwrite($resultFile, $que1);
-	fwrite($resultFile, "\n");
-	fwrite($resultFile, $que2);
-	fwrite($resultFile, "\n");
-	fwrite($resultFile, $que3);
-	fwrite($resultFile, "\n");
-	fwrite($resultFile, $que4);
-	fwrite($resultFile, "\n");
-	fwrite($resultFile, $que5);
-	fwrite($resultFile, "\n");
-	fwrite($resultFile, $que6);
-	fwrite($resultFile, "\n");
-	fwrite($resultFile, $que7);
-	fwrite($resultFile, "\n");
 
+	if ($que1 != "" || $que1 != null || $que2 != "" || $que2 != null ||
+        $que3 != "" || $que3 != null || $que4 != "" || $que4 != null ||
+        $que5 != "" || $que5 != null || $que6 != "" || $que6 != null ||
+        $que7 != "" || $que7 != null) {
+		fwrite($resultFile, $que1 . "\n");
+		fwrite($resultFile, $que2 . "\n");
+		fwrite($resultFile, $que3 . "\n");
+		fwrite($resultFile, $que4 . "\n");
+		fwrite($resultFile, $que5 . "\n");
+		fwrite($resultFile, $que6 . "\n");
+		fwrite($resultFile, $que7 . "\n");
+	}
 	fclose($resultFile);
 ?>
 
