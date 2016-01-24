@@ -27,7 +27,7 @@ else
 	<?php 
 	echo "<h6>You've visited it " . $_SESSION[$VISIT_COUNT] . " times!</h6>" 
 	?>
-	</div>
+</div>
 <div id="wrapper">
 	<?php include 'resources/navigation.php';?>
 	<div id="main">

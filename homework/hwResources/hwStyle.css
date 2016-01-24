@@ -4,6 +4,10 @@ body {
 	background-repeat: repeat;
 }
 
+.error {
+	color: red;
+}
+
 #wrapper {
 	width: 1300px;
 	float: center;
@@ -24,7 +28,7 @@ body {
 }
 
 img {
-	float: right;
+	float: center;
 	margin: 0 0 10px 10px;
 }
 
@@ -34,6 +38,36 @@ img {
 	text-align: left;
 	color: white;
 	font-size: 25px;
+}
+
+#questionLeft {
+	width: 500px;
+	float: left;
+	text-align: right;
+	color: white;
+	font-size: 25px;
+	border-style: solid;
+	border-color: green;
+}
+
+#questionRight {
+	width: 500px;
+	float: right;
+	text-align: left;
+	color: white;
+	font-size: 25px;
+	border-style: solid;
+	border-color: green;
+}
+#questionCenter {
+	width: 800px;
+	float: center;
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	border-width: 10px;
+	border-style: solid;
+	border-color: green;
 }
 
 #navi {
@@ -54,3 +88,29 @@ a {
     display: block;
 }
 
+label > input{ 
+	display:none;
+}
+label > input + img{ 
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ 
+  border:2px solid #f00;
+}
+
+#labelLeft {
+	float: left;
+}
+
+#labelRight {
+	float: right;
+}
+
+#labelCenter {
+	float: center;
+}
+
+#formFooter {
+	float: bottom, center;
+}

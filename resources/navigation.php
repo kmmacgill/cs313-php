@@ -7,6 +7,7 @@
 		<p id="navi">Practice work: recommend new window</p>
 		<a href="practice/form.html">Class Practice: Forms</a> <br />
 		<a href="practice/session.php">session practice</a> <br />
+		<a href="practice/fileTest.php">file/upload practice</a> <br />
 	</div>';
 
 ?>
