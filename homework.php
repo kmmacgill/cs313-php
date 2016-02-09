@@ -13,17 +13,7 @@
 	<div id="main">
 		<h3>Please choose from one of the assignment below to view</h3>	
 		<a href="homework/survey.php"><img src="images/survey.png"></a>
-		<a href=""><img src="images/coming-soon.png"></a>
-		<a href=""><img src="images/coming-soon.png"></a>
-		<a href=""><img src="images/coming-soon.png"></a>
-		<a href=""><img src="images/coming-soon.png"></a>
-		<a href=""><img src="images/coming-soon.png"></a>
-		<a href=""><img src="images/coming-soon.png"></a>
-		<a href=""><img src="images/coming-soon.png"></a>
-		<a href=""><img src="images/coming-soon.png"></a>
-		<a href=""><img src="images/coming-soon.png"></a>
-		<a href=""><img src="images/coming-soon.png"></a>
-		<a href=""><img src="images/coming-soon.png"></a>
+		<a href="booksForCooks/login.php"><img src="images/cookBook.png"></a>
 	</div>
 </div>
 
