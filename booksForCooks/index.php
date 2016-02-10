@@ -5,14 +5,18 @@ if (!isset($_SESSION['user']) && !isset($_SESSION['pass'])) {
 	$_SESSION['user'] = $_POST['userName'];
 	$_SESSION['pass'] =  $_POST['password'];
 }
-echo "TESTING TESTING 123!";
+//admin info login stuff
 $host = getenv('OPENSHIFT_MYSQL_DB_HOST'); 
 $port = getenv('OPENSHIFT_MYSQL_DB_PORT'); 
-$user = $_SESSION['user'];
-$password = $_SESSION['pass'];
+$user = getenv('OPENSHIFT_MYSQL_DB_USERNAME'); 
+$password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+
+//users' input
+$use = $_SESSION['userName'];
+$pass = $_SESSION['password'];
 
 //check for blank login
-if ($user && $password) {
+if ($use && $pass) {
 	try { 
 	    $db = new PDO("mysql:host=$host:$port;dbname=booksforcooks", $user, $password);
 	}
@@ -27,7 +31,7 @@ if ($user && $password) {
 	join recipe_book rb on rr.recipe_id = rb.recipe_id 
 	join cookbook cb on rb.cookbook_id = cb.cookbook_id 
 	join users u on cb.user_id = u.user_id
-	WHERE u.user_name = '$user'");
+	WHERE u.user_name = '$use'");
 
 	$dataRow  = "";
 	$dataRow1 = "";
