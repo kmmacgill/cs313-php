@@ -16,7 +16,7 @@ $use = $_SESSION['userName'];
 $pass = $_SESSION['password'];
 
 //check for blank login
-if ($use && $pass) {
+if ($user && $password) {
 	try { 
 	    $db = new PDO("mysql:host=$host:$port;dbname=booksforcooks", $user, $password);
 	}
@@ -31,7 +31,7 @@ if ($use && $pass) {
 	join recipe_book rb on rr.recipe_id = rb.recipe_id 
 	join cookbook cb on rb.cookbook_id = cb.cookbook_id 
 	join users u on cb.user_id = u.user_id
-	WHERE u.user_name = '$use'");
+	WHERE u.user_name = '$user'");
 
 	$dataRow  = "";
 	$dataRow1 = "";
@@ -48,9 +48,9 @@ if ($use && $pass) {
 	}
 
 	}
-	else
-		die("Whoops, looks like you didn't enter a user name or password <br />
-			Better fix that, " . "<a href='login.php'>go back</a>" . " and try again.");
+else
+	die("Whoops, looks like you didn't enter a user name or password <br />
+		Better fix that, " . "<a href='login.php'>go back</a>" . " and try again.");
 ?>
 
 <!DOCTYPE html>
