@@ -5,15 +5,16 @@ if (!isset($_SESSION['user']) && !isset($_SESSION['pass'])) {
 	$_SESSION['user'] = $_POST['userName'];
 	$_SESSION['pass'] =  $_POST['password'];
 }
-
+echo "TESTING TESTING 123!";
+$host = getenv('OPENSHIFT_MYSQL_DB_HOST'); 
+$port = getenv('OPENSHIFT_MYSQL_DB_PORT'); 
 $user = $_SESSION['user'];
 $password = $_SESSION['pass'];
 
 //check for blank login
 if ($user && $password) {
 	try { 
-	    $db = new PDO('mysql:host=localhost;dbname=booksforcooks', $user, $password);
-		//$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    $db = new PDO("mysql:host=$host:$port;dbname=booksforcooks", $user, $password);
 	}
 	catch (PDOException $e) {
 		echo 'Error!: ' . $e->getMessage();
