@@ -18,7 +18,8 @@ $pass = $_SESSION['password'];
 echo $use + " : " + $pass;
 
 //check for blank login
-if ($use && $pass) {
+//if ($use && $pass) 
+{
 	try { 
 	    $db = new PDO("mysql:host=$host:$port;dbname=booksforcooks", $user, $password);
 	}
@@ -49,10 +50,10 @@ if ($use && $pass) {
 	    $dataRow4 = $dataRow4."<tr><td><img src='' alt=''</td></tr>";
 	}
 
-	}
-else
-	die("Whoops, looks like you didn't enter a user name or password <br />
-		Better fix that, " . "<a href='login.php'>go back</a>" . " and try again.");
+}
+//else
+	//die("Whoops, looks like you didn't enter a user name or password <br />
+	//	Better fix that, " . "<a href='login.php'>go back</a>" . " and try again.");
 ?>
 
 <!DOCTYPE html>
