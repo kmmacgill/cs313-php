@@ -9,15 +9,13 @@ if (!isset($_SESSION['logged'])) {
 }
 
 //check for blank login
-if ($_SESSION['user_name'])
+if ($use && $pass) 
 {
-	try 
-	{ 
-	    require(dbConnector.php);
+	try { 
+	    require("dbConnector.php");
 	    $db = loadDataBase();
 	}
-	catch (PDOException $e) 
-	{
+	catch (PDOException $e) {
 		echo 'Error!: ' . $e->getMessage();
 	    die(); 
 	}
