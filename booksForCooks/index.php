@@ -21,7 +21,7 @@ if (isset($_SESSION['logged']))
 	    die(); 
 	}
 
-	$use = $_SESSION['user_name'];
+	$user = $_SESSION['user_name'];
 
 	//mysql select query
 	$query = $db->query("SELECT rr.likes, r.name from recipes r 
@@ -29,7 +29,7 @@ if (isset($_SESSION['logged']))
 	join recipe_book rb on rr.recipe_id = rb.recipe_id 
 	join cookbook cb on rb.cookbook_id = cb.cookbook_id 
 	join users u on cb.user_id = u.user_id
-	WHERE u.user_name = '$use'");
+	WHERE u.user_name = '$user'");
 
 	$dataRow  = "";
 	$dataRow1 = "";

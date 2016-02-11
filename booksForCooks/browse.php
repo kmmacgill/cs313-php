@@ -1,14 +1,12 @@
 <?php
 session_start();
 
-$user = $_SESSION['user'];
-$password = $_SESSION['pass'];
-
 //check for blank login
-if ($user && $password) {
+if (isset($_SESSION['logged'])) 
+{
 	try { 
-	    $db = new PDO('mysql:host=localhost;dbname=booksforcooks', $user, $password);
-		//$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    require("dbConnector.php");
+	    $db = loadDataBase();
 	}
 	catch (PDOException $e) {
 		echo 'Error!: ' . $e->getMessage();
