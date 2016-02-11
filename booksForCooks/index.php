@@ -21,6 +21,8 @@ if (isset($_SESSION['logged']))
 	    die(); 
 	}
 
+	$use = $_SESSION['user_name'];
+
 	//mysql select query
 	$query = $db->query("SELECT rr.likes, r.name from recipes r 
 	join recipe_rating rr on r.recipe_id = rr.recipe_id 
