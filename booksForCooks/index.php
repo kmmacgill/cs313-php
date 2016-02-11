@@ -5,7 +5,7 @@ if (!isset($_SESSION['logged'])) {
 	$use = $_POST['userName'];
 	$pass = $_POST['password'];
 	$_SESSION['logged'] = "yes";
-	$_SESSION['user_name'];
+	$_SESSION['user_name'] = $use;
 }
 
 //check for blank login
