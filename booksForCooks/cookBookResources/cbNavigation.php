@@ -1,6 +1,8 @@
 <?php
 
 	echo '<div id="navigation">
+		<a href="account.php">My Account</a> <br />
+
 		<p id="navi">Navigation</p>
 		<a href="index.php">My Book</a> <br />
 		<a href="manage.php">Manage Recipes</a> <br />

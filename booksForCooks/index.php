@@ -64,7 +64,6 @@ else
 	<h1>Books For Cooks</h1>
 </div>
 <?php include 'cookBookResources/cbNavigation.php' ?>
-<?php include 'cookBookResources/cbUser.php' ?>
 <div id="main">
 	<form>
 	<input type="submit" value="get shopping list">
