@@ -15,6 +15,8 @@ $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 $use = $_SESSION['userName'];
 $pass = $_SESSION['password'];
 
+echo $use + " : " + $pass;
+
 //check for blank login
 if ($use && $pass) {
 	try { 
