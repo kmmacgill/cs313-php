@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-$user = $_SESSION['user'];
-$password = $_SESSION['pass'];
-
 //check for blank login
 if ($user && $password) {
 	try { 

@@ -5,22 +5,19 @@ if (!isset($_SESSION['logged'])) {
 	$use = $_POST['userName'];
 	$pass = $_POST['password'];
 	$_SESSION['logged'] = "yes";
+	$_SESSION['user_name'];
 }
-//admin info login stuff
-$host = getenv('OPENSHIFT_MYSQL_DB_HOST'); 
-$port = getenv('OPENSHIFT_MYSQL_DB_PORT'); 
-$user = getenv('OPENSHIFT_MYSQL_DB_USERNAME'); 
-$password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-
-echo ("The user name is: " + $use + " And the Password is: " + $pass);
 
 //check for blank login
-if ($use && $pass) 
+if ($_SESSION['user_name'])
 {
-	try { 
-	    $db = new PDO("mysql:host=$host:$port;dbname=booksforcooks", $user, $password);
+	try 
+	{ 
+	    require(dbConnector.php);
+	    $db = loadDataBase();
 	}
-	catch (PDOException $e) {
+	catch (PDOException $e) 
+	{
 		echo 'Error!: ' . $e->getMessage();
 	    die(); 
 	}
