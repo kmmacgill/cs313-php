@@ -1,10 +1,11 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['logged'])) {
 	$use = $_POST['userName'];
 	$pass = $_POST['password'];
-	//$_SESSION['logged'] = "yes";
-
+	$_SESSION['logged'] = "yes";
+}
 //admin info login stuff
 $host = getenv('OPENSHIFT_MYSQL_DB_HOST'); 
 $port = getenv('OPENSHIFT_MYSQL_DB_PORT'); 
@@ -30,7 +31,7 @@ if ($use && $pass)
 	join recipe_book rb on rr.recipe_id = rb.recipe_id 
 	join cookbook cb on rb.cookbook_id = cb.cookbook_id 
 	join users u on cb.user_id = u.user_id
-	WHERE u.user_name = '$_SESSION['use']");
+	WHERE u.user_name = '$use'");
 
 	$dataRow  = "";
 	$dataRow1 = "";
