@@ -2,14 +2,15 @@
 session_start();
 
 if (!isset($_SESSION['logged'])) {
-	$use = $_POST['userName'];
-	$pass = $_POST['password'];
+//check to see if logged in proper
+//do something
+//set logged in value good and save username
 	$_SESSION['logged'] = "yes";
-	$_SESSION['user_name'] = $use;
+	$_SESSION['user_name'] = $_POST['userName'];
 }
 
 //check for blank login
-if ($use && $pass) 
+if (isset($_SESSION['logged'])) 
 {
 	try { 
 	    require("dbConnector.php");
