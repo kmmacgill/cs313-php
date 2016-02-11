@@ -1,13 +1,11 @@
 <?php
+
 //redirect if already logged in...
-if (isset($_SESSION['user']) && isset($_SESSION['pass'])) {
+if (isset($_SESSION['logged'])) {
 	header('Location: http://localhost/cs313/booksForCooks/index.php');
 	exit();
 }
-
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>

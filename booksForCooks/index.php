@@ -48,9 +48,9 @@ if ($use && $pass)
 	}
 
 }
-//else
-	//die("Whoops, looks like you didn't enter a user name or password <br />
-	//	Better fix that, " . "<a href='login.php'>go back</a>" . " and try again.");
+else
+	die("Whoops, looks like you didn't enter a user name or password <br />
+		Better fix that, " . "<a href='login.php'>go back</a>" . " and try again.");
 ?>
 
 <!DOCTYPE html>
