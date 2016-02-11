@@ -1,11 +1,10 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['logged'])) {
 	$use = $_POST['userName'];
 	$pass = $_POST['password'];
-	$_SESSION['logged'] = "yes";
-}
+	//$_SESSION['logged'] = "yes";
+
 //admin info login stuff
 $host = getenv('OPENSHIFT_MYSQL_DB_HOST'); 
 $port = getenv('OPENSHIFT_MYSQL_DB_PORT'); 
