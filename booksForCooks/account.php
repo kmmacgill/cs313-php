@@ -20,7 +20,7 @@ $user = $_SESSION['user_name'];
 <div id="account">
 	<h3>My Account</h3>
   <label for="username">Your user name:</label>
-  <p id="username">$user</p>
+  <p id="username"><?echo $user?></p>
 
 	<form>
   <h6>Edit your user name and password...</h6>
