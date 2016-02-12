@@ -1,46 +1,48 @@
 <?php
 session_start();
 
-// $user = $_SESSION['user'];
-// $password = $_SESSION['pass'];
+if (isset($_SESSION['user_name'])) 
+{
+	try { 
+	    require("dbConnector.php");
+	    $db = loadDataBase();
+	}
+	catch (PDOException $e) {
+		echo 'Error!: ' . $e->getMessage();
+	    die(); 
+	}
 
-// //check for blank login
-// if ($user && $password) {
-// 	try { 
-// 	    $db = new PDO('mysql:host=localhost;dbname=booksforcooks', $user, $password);
-// 		//$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// 	}
-// 	catch (PDOException $e) {
-// 		echo 'Error!: ' . $e->getMessage();
-// 	    die(); 
-// 	}
+$recipe_id = $_GET["id"];
+$user_name = $_SESSION['user_name'];
 
-// 	//mysql select query
-// 	$query = $db->query("SELECT rr.likes, r.name from recipes r 
-// 	join recipe_rating rr on r.recipe_id = rr.recipe_id 
-// 	join recipe_book rb on rr.recipe_id = rb.recipe_id 
-// 	join cookbook cb on rb.cookbook_id = cb.cookbook_id 
-// 	join users u on cb.user_id = u.user_id
-// 	WHERE u.user_name = '$user'");
+//SETTING UP THE INGREDIENTS OF THE RECIPE
+$query = $db->query("SELECT ing.name, ing.amount from ingredients ing
+join recipe_book rb on ing.recipe_id = rb.recipe_id
+join cookbook cb on rb.cookbook_id = cb.cookbook_id
+join users u on cb.user_id = u.user_id
+WHERE u.user_name = '$user_name' and ing.recipe_id = '$recipe_id'");
 
-// 	$dataRow  = "";
-// 	$dataRow1 = "";
-// 	$dataRow2 = "";
-// 	$dataRow3 = "";
-// 	$dataRow4 = "";
+$ingredient = "";
+$amount = "";
 
-// 	while($row = $query->fetch(PDO::FETCH_NUM)) {
-// 		$dataRow  = $dataRow."<tr><td><input type='checkbox' name='myTextEditBox' value='checked'/></td></tr>";
-// 	    $dataRow1 = $dataRow1."<tr><td>$row[0]</td></tr>";
-// 	    $dataRow2 = $dataRow2."<tr><td>$row[1]</td></tr>";
-// 	    $dataRow3 = $dataRow3."<tr><td><a href='recipe.php'>Click for Recipe</a></td></tr>";
-// 	    $dataRow4 = $dataRow4."<tr><td><img src='' alt=''</td></tr>";
-// 	}
+while($row = $query->fetch(PDO::FETCH_NUM))
+{
+	$ingredient = $ingredient."<tr><td>$row[0]</td></tr>";
+	$amount = $amount."<tr><td>$row[1]</td></tr>";
+}
 
-// 	}
-// 	else
-// 		die("Whoops, looks like you didn't enter a user name or password <br />
-// 			Better fix that, " . "<a href='login.php'>go back</a>" . " and try again.");
+//SETTING UP THE INSTRUCTIONS OF THE RECIPE
+$query = $db->query("SELECT stepNumb, message from instructions WHERE recipe_id = '$recipe_id';");
+
+$message = "";
+
+while($row = $query->fetch(PDO::FETCH_NUM))
+{
+	$message = $message."<tr><td>$row[0]: $row[1]</td></tr>";
+}
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -54,9 +56,24 @@ session_start();
 	<h1>Books For Cooks</h1>
 </div>
 <?php include 'cookBookResources/cbNavigation.php' ?>
-<?php include 'cookBookResources/cbUser.php' ?>
 <div id="main">
-	<h1>Coming soon</h1>
+<br />
+	<div id="instructions">
+		<table id="ingAmt">
+		    <tr><th>Amount</th></tr>
+		    <tr><?php echo $amount; ?></tr>
+		</table>
+		<table id="ingName">
+		    <tr><th>Ingredient</th></tr>
+		    <tr><?php echo $ingredient; ?></tr>
+		</table>
+	</div>
+	<div id="ingredients">
+		<table id="inst">
+		<tr><th>Instructions</th></tr>
+		    <tr><?php echo $message; ?></tr>
+		</table>
+	</div>
 </div>
 
 </body>

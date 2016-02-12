@@ -13,7 +13,6 @@
 	<h1>Books For Cooks</h1>
 </div>
 <?php include 'cookBookResources/cbNavigation.php' ?>
-<?php include 'cookBookResources/cbUser.php' ?>
 <div id="main">
 <h2>Let's get Started</h2>
 

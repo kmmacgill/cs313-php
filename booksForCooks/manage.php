@@ -2,7 +2,7 @@
 session_start();
 
 //check for blank login
-if (isset($_SESSION['logged'])) 
+if (isset($_SESSION['user_name'])) 
 {
 	try { 
 	    require("dbConnector.php");
@@ -52,7 +52,6 @@ if (isset($_SESSION['logged']))
 	<h1>Books For Cooks</h1>
 </div>
 <?php include 'cookBookResources/cbNavigation.php' ?>
-<?php include 'cookBookResources/cbUser.php' ?>
 <div id="main">
 	<form>
 	<input type="submit" value="confirm deletions">

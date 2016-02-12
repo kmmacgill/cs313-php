@@ -1,8 +1,8 @@
 <?php
-
+session_start();
 //redirect if already logged in...
-if (isset($_SESSION['logged'])) {
-	header('Location: http://localhost/cs313/booksForCooks/index.php');
+if (isset($_SESSION['user_name'])) {
+	header('Location: index.php');
 	exit();
 }
 ?>
@@ -17,9 +17,11 @@ if (isset($_SESSION['logged'])) {
 <div id="header">
 	<h1>Welcome to Books For Cooks</h1>
 	<h3>Please log in to continue</h3>
-	<form action="index.php" method="POST">
-		<h6>UserName: <input type='text' name="userName"></h6>
-		<h6>Password: <input type="password" name="password"></h6>
+	<form name="loginForm" action="verify.php" method="POST">
+  		Username: <input id="user" name="userName" type="text" required/>
+  		<span id="userError">*</span> <br />
+  		Password: <input id="pass" name="password" type="password" required/>
+  		<span id="passError">*</span> <br />
 		<input type="submit" value="log in">
 	</form>
 </div>

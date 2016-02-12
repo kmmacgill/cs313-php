@@ -2,10 +2,10 @@
 
 function loadDataBase() 
 {
-    $dbHost = "";
-    $dbPort = "";
-    $dbUser = "";
-    $dbPassword = "";
+	$dbHost = "";
+  	$dbPort = "";
+  	$dbUser = "";
+  	$dbPassword = "";
 
     $dbName = "booksforcooks";
 

@@ -3,6 +3,26 @@ body {
 	text-align: left;
 }
 
+tr {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+a {
+	float: left;
+}
+
+label > input{ 
+	display:none;
+}
+label > input + img{ 
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ 
+  border:2px solid #f00;
+}
+
 #header {
 	color: #e67200; 
 	font-size: 50px;
@@ -24,11 +44,6 @@ body {
 	float: right;
 	text-align: center;
 	font-size: 25px;
-}
-
-tr {
-	margin-left: 100px;
-	margin-right: 100px;
 }
 
 #main {
@@ -60,9 +75,30 @@ tr {
 	color: black;
 }
 
+#inst {
+	text-align: left;
+	width: 500px;
+	color: black;
+	margin-left: 5px;
+}
+
 #ingredients {
 	float: right;
 	width: 500px;
+	color: black;
+}
+
+#ingName {
+	float: right;
+	text-align: left;
+	width: 200px;
+	color: black;
+}
+
+#ingAmt {
+	float: left;
+	text-align: right;
+	width: 200px;
 	color: black;
 }
 
@@ -111,10 +147,6 @@ tr {
 	margin-right: 30px;
 }
 
-a {
-	float: left;
-}
-
 .img {
 	overflow: auto;
 }
@@ -125,15 +157,4 @@ a {
 
 .morelink {
     display: block;
-}
-
-label > input{ 
-	display:none;
-}
-label > input + img{ 
-  cursor:pointer;
-  border:2px solid transparent;
-}
-label > input:checked + img{ 
-  border:2px solid #f00;
 }

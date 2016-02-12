@@ -1,16 +1,8 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['logged'])) {
-//check to see if logged in proper
-//do something
-//set logged in value good and save username
-	$_SESSION['logged'] = "yes";
-	$_SESSION['user_name'] = $_POST['userName'];
-}
-
 //check for blank login
-if (isset($_SESSION['logged'])) 
+if (isset($_SESSION['user_name'])) 
 {
 	try { 
 	    require("dbConnector.php");
@@ -24,7 +16,7 @@ if (isset($_SESSION['logged']))
 	$user = $_SESSION['user_name'];
 
 	//mysql select query
-	$query = $db->query("SELECT rr.likes, r.name from recipes r 
+	$query = $db->query("SELECT rr.likes, r.name, r.recipe_id from recipes r 
 	join recipe_rating rr on r.recipe_id = rr.recipe_id 
 	join recipe_book rb on rr.recipe_id = rb.recipe_id 
 	join cookbook cb on rb.cookbook_id = cb.cookbook_id 
@@ -38,17 +30,17 @@ if (isset($_SESSION['logged']))
 	$dataRow4 = "";
 
 	while($row = $query->fetch(PDO::FETCH_NUM)) {
-		$dataRow  = $dataRow."<tr><td><input type='checkbox' name='myTextEditBox' value='checked'/></td></tr>";
+		$dataRow = $dataRow."<tr><td><input type='checkbox' name='myTextEditBox' value='checked'/></td></tr>";
 	    $dataRow1 = $dataRow1."<tr><td>$row[0]</td></tr>";
 	    $dataRow2 = $dataRow2."<tr><td>$row[1]</td></tr>";
-	    $dataRow3 = $dataRow3."<tr><td><a href='recipe.php'>Click for Recipe</a></td></tr>";
+	    $dataRow3 = $dataRow3."<tr><td><a href='recipe.php?id=$row[2]'>Get Recipe</a></td></tr>";
 	    $dataRow4 = $dataRow4."<tr><td><img src='' alt=''</td></tr>";
 	}
 
 }
 else
-	die("Whoops, looks like you didn't enter a user name or password <br />
-		Better fix that, " . "<a href='login.php'>go back</a>" . " and try again.");
+	die("Whoops, Something went wrong... <br />
+		<a href='login.php'>log in</a> and try again.");
 ?>
 
 <!DOCTYPE html>
