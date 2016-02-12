@@ -16,7 +16,7 @@ if (isset($_SESSION['user_name']))
 	$user = $_SESSION['user_name'];
 
 	//mysql select query
-	$query = $db->query("SELECT rr.likes, r.name from recipes r 
+	$query = $db->query("SELECT rr.likes, r.name, r.recipe_id from recipes r 
 	join recipe_rating rr on r.recipe_id = rr.recipe_id 
 	join recipe_book rb on rr.recipe_id = rb.recipe_id 
 	join cookbook cb on rb.cookbook_id = cb.cookbook_id 
