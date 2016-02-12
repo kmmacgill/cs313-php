@@ -31,7 +31,7 @@ if (isset($_SESSION['user_name']))
 		$dataRow  = $dataRow."<tr><td><input type='checkbox' name='myTextEditBox' value='checked'/></td></tr>";
 	    $dataRow1 = $dataRow1."<tr><td>$row[0]</td></tr>";
 	    $dataRow2 = $dataRow2."<tr><td>$row[1]</td></tr>";
-	    $dataRow3 = $dataRow3."<tr><td><a href='recipe.php'>Click for Recipe</a></td></tr>";
+	    $dataRow3 = $dataRow3."<tr><td><a href='recipe.php?id=$row[2]'>Get Recipe</a></td></tr>";
 	    $dataRow4 = $dataRow4."<tr><td><img src='' alt=''</td></tr>";
 	}
 
