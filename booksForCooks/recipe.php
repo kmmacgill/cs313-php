@@ -13,14 +13,14 @@ if (isset($_SESSION['user_name']))
 	}
 
 $recipe_id = $_GET["id"];
-$user_name = $_SESSION['user_name'];
+$mainBook = $_SESSION['mainCookbook'];
 
 //SETTING UP THE INGREDIENTS OF THE RECIPE
 $query = $db->query("SELECT ing.name, ing.amount from ingredients ing
 join recipe_book rb on ing.recipe_id = rb.recipe_id
 join cookbook cb on rb.cookbook_id = cb.cookbook_id
 join users u on cb.user_id = u.user_id
-WHERE u.user_name = '$user_name' and ing.recipe_id = '$recipe_id'");
+WHERE u.user_name = '$mainBook' and ing.recipe_id = '$recipe_id'");
 
 $ingredient = "";
 $amount = "";

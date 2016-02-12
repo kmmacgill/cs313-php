@@ -13,13 +13,15 @@ if (isset($_SESSION['user_name']))
 	    die(); 
 	}
 
+	$mainBook = $_SESSION['mainCookbook'];
+
 	//mysql select query
 	$query = $db->query("SELECT rr.likes, r.name, r.recipe_id from recipes r 
 	join recipe_rating rr on r.recipe_id = rr.recipe_id 
 	join recipe_book rb on rr.recipe_id = rb.recipe_id 
 	join cookbook cb on rb.cookbook_id = cb.cookbook_id 
 	join users u on cb.user_id = u.user_id
-	WHERE u.user_name = 'kmac'");
+	WHERE u.user_name = '$mainBook'");
 
 	$dataRow  = "";
 	$dataRow1 = "";

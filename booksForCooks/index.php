@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$_SESSION['mainCookbook'] = "kmac";
+
 //check for blank login
 if (isset($_SESSION['user_name'])) 
 {
