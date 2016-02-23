@@ -32,7 +32,8 @@ while($row = $query->fetch(PDO::FETCH_NUM))
 }
 
 //SETTING UP THE INSTRUCTIONS OF THE RECIPE
-$query = $db->query("SELECT stepNumb, message from instructions WHERE recipe_id = '$recipe_id';");
+$query = $db->query("SELECT stepNumb, message from instructions 
+	WHERE recipe_id = '$recipe_id';");
 
 $message = "";
 

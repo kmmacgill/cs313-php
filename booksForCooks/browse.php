@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$_SESSION['mainCookbook'] = "kmac";
+
 //check for blank login
 if (isset($_SESSION['user_name'])) 
 {
@@ -30,7 +32,7 @@ if (isset($_SESSION['user_name']))
 	$dataRow4 = "";
 
 	while($row = $query->fetch(PDO::FETCH_NUM)) {
-		$dataRow  = $dataRow."<tr><td><input type='checkbox' name='myTextEditBox' value='checked'/></td></tr>";
+		$dataRow  = $dataRow."<tr><td><input type='checkbox' name='addToCookbook[]' value='$row[2]'/></td></tr>";
 	    $dataRow1 = $dataRow1."<tr><td>$row[0]</td></tr>";
 	    $dataRow2 = $dataRow2."<tr><td>$row[1]</td></tr>";
 	    $dataRow3 = $dataRow3."<tr><td><a href='recipe.php?id=$row[2]'>Get Recipe</a></td></tr>";
@@ -52,7 +54,7 @@ if (isset($_SESSION['user_name']))
 </div>
 <?php include 'cookBookResources/cbNavigation.php' ?>
 <div id="main">
-	<form>
+	<form action="updateCookbook.php" method="POST">
 	<input type="submit" value="Add to My Cookbook">
 	<h1>The Cook Book</h1>
 	<table id="add">

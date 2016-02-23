@@ -38,7 +38,9 @@ var insCount = 0;
 $(function(){
     $('p#add_instruction').click(function(){
         insCount += 1;
-        $('#instructions').append('<strong>Step #' + insCount + '</strong>'+ '<input id="field_' + insCount + '" name="ingFields[]' + '" type="text" /> <br />' );
+        $('#instructions').append('<strong>Step #' + insCount 
+            + '</strong>'+ '<input id="instruct_' + insCount 
+            + '" name="insFields[]' + '" type="text" required/> <br />' );
     });
 });
 
@@ -46,6 +48,11 @@ var ingCount = 0;
 $(function(){
     $('p#add_ingredient').click(function(){
         ingCount += 1;
-        $('#ingredients').append('<strong>item #' + ingCount + '</strong>'+ '<input id="field_' + ingCount + '" name="ingFields[]' + '" type="text" /> <br />' );
+        $('#ingredients').append('<strong>item #' + ingCount 
+            + '</strong>'+ '<input id="ing_' + ingCount 
+            + '" name="ingFields[]' + '" type="text" required/> <br />' 
+            + '<strong>Amount:' + ' ' + '</strong>' 
+            + '<input id="amt_' + ingCount + '" name="amtFields[]' 
+            + '" type="text" required/> <br />');
     });
 });
